@@ -38,10 +38,7 @@ class Linear():
         self.target_model = keras.models.clone_model(self.model)
         self.update_target_weights()
 
-        log_dir = "logs/experiment/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-        self.Writer = tf.summary.create_file_writer(log_dir)
         self.update_steps = 0
-        self.update_freq = 2
         self.total_reward = 0
 
     def greedy_policy(self, curr_state):  # Espilon Greedy
